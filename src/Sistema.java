@@ -76,8 +76,17 @@ public class Sistema {
                 case 2:
                     System.out.println("Qual aluno deseja pesquisar? \n");
                     int rgm = input.nextInt();
-                    buscaBinaria.binario(turma, rgm);
-
+                    int nsei = buscaBinaria.binario(turma, rgm);
+                    if(nsei >= 0){
+                        System.out.println("Nome do aluno: " + turma.get(nsei).getNomeAluno());
+                        System.out.println("RGM do aluno: " + turma.get(nsei).getRgm());
+                        System.out.println("Disciplinas: ");
+                        for (String disciplina: turma.get(nsei).getDisciplinas()){
+                            System.out.print(disciplina);
+                        }
+                    }else{
+                        System.out.println("Não existe.");
+                    }
 
                     break;
 
