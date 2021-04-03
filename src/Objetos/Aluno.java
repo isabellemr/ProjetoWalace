@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Aluno {
 
-    //CONSTRUTORES
+    //CONSTRUTOR
     public Aluno() {
         this.nomeAluno = nomeAluno;
         this.rgm = rgm;
