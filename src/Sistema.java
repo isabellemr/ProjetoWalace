@@ -11,6 +11,7 @@ public class Sistema {
         ArrayList<Aluno> turma = new ArrayList<>(60);
         Scanner input = new Scanner(System.in);
         Scanner entradaString = new Scanner(System.in);
+        BuscaBinaria buscaBinaria = new BuscaBinaria();
 
         //ATRIBUTOS
         int menu = 99;
@@ -73,7 +74,11 @@ public class Sistema {
 
                 //BUSCA DE USUARIO
                 case 2:
-                    System.out.println("Case 2 \n");
+                    System.out.println("Qual aluno deseja pesquisar? \n");
+                    int rgm = input.nextInt();
+                    buscaBinaria.binario(turma, rgm);
+
+
                     break;
 
                 //DELETAR UM USUARIO

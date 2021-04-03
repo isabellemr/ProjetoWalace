@@ -1,8 +1,10 @@
 package Objetos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class Aluno {
+
+public class Aluno{
 
     //CONSTRUTOR
     public Aluno() {
