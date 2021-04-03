@@ -10,10 +10,11 @@ public class Sistema {
         //INSTANCIAS DE OBJETOS
         ArrayList<Aluno> turma = new ArrayList<>(60);
         Scanner input = new Scanner(System.in);
+        Scanner entradaString = new Scanner(System.in);
 
         //ATRIBUTOS
         int menu = 99;
-        String menuCadastro = null;
+        String menuCadastro = "s";
 
         //PROGRAMA
         while(menu != 0) {
@@ -32,43 +33,42 @@ public class Sistema {
                 //CADASTRO
                 case 1:
 
-                    while(menuCadastro != "N" || turma.size() <= 60) {
+                    while(menuCadastro.equals("s") || turma.size() <= 60) {
 
                         //INSTANCIANDO OBJETOS
-                        Scanner entradaAluno = new Scanner(System.in);
+
                         Aluno aluno = new Aluno();
 
                         //ATRIBUTOS
-                        String maisDisciplinas = "S";
+                        String maisDisciplinas = "s";
 
                         //ENTRADA NOME ALUNO E SALVANDO O INPUT DO TIPO STRING
                         System.out.println("Digite o nome do aluno e aperte enter: ");
-                        aluno.nomeAluno = entradaAluno.nextLine();
+                        aluno.nomeAluno = entradaString.nextLine();
 
                         //ENTRADA DO RGM E SALVANDO O INPUT DO TIPO INT
                         System.out.println("Digite o RGM do aluno e aperte enter: ");
-                        aluno.rgm = entradaAluno.nextInt();
+                        aluno.rgm = input.nextInt();
 
                         //ENTRADAS DAS DISCIPLINAS
-                        while (maisDisciplinas == "S") {
+                        while (maisDisciplinas.equals("s")) {
 
                             //ENTRADA DA DISCIPLINA E SALVANDO O INPUT DO TIPO STRING
                             System.out.println("Digite uma disciplina: ");
-                            aluno.disciplinas.add(entradaAluno.nextLine());
-                            entradaAluno.nextLine();
+                            aluno.disciplinas.add(entradaString.nextLine());
 
                             //PERGUNTANDO SE O USUARIO DESEJA ADICIONAR MAIS DISCIPLINAS
                             System.out.println("Mais disciplinas? ");
-                            maisDisciplinas = entradaAluno.nextLine();
+                            maisDisciplinas = entradaString.nextLine();
                         }
 
                         //CONTINUAR CADASTRO DE MAIS ALUNOS OU NAO
                         System.out.println("Deseja cadastrar outro aluno? ");
-                        menuCadastro = entradaAluno.nextLine();
+                        menuCadastro = entradaString.nextLine();
 
-                        //ENCERRANDO O OBJETO SCANNER
-                        entradaAluno.close();
-
+                        if(menuCadastro.equals("n")) {
+                            break;
+                        }
                     }
 
                 //BUSCA DE USUARIO
@@ -88,6 +88,10 @@ public class Sistema {
             }
 
         }
+
+        //ENCERRANDO Os OBJETOs SCANNER
+        entradaString.close();
+        input.close();
 
         System.out.println("Programa encerrado");
 
