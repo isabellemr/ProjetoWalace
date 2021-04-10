@@ -58,17 +58,20 @@ public class Sistema {
                             aluno.disciplinas.add(entradaString.nextLine());
 
                             //PERGUNTANDO SE O USUARIO DESEJA ADICIONAR MAIS DISCIPLINAS
-                            System.out.println("Mais disciplinas? ");
+                            System.out.println("Mais disciplinas? (Digite 's' para sim ou 'n' para não)");
                             maisDisciplinas = entradaString.nextLine();
+
                         }
+
+                        //Adicionando luno a turma
+                        turma.add(aluno);
 
                         //CONTINUAR CADASTRO DE MAIS ALUNOS OU NAO
-                        System.out.println("Deseja cadastrar outro aluno? ");
+                        System.out.println("Deseja cadastrar outro aluno? (Digite 's' para sim ou 'n' para não)");
                         menuCadastro = entradaString.nextLine();
 
-                        if(menuCadastro.equals("n")) {
-                            break;
-                        }
+                        if(menuCadastro.equals("n")) { break; }
+
                     }
 
                 //BUSCA DE USUARIO
@@ -83,8 +86,11 @@ public class Sistema {
 
                 //VISUALIZAR TURMA
                 case 4:
-                    System.out.println("Case 4 \n");
+                    for(int cont = 0; cont < turma.size(); cont++){
+                        System.out.println(turma.get(cont).getNomeAluno());
+                    }
                     break;
+
             }
 
         }

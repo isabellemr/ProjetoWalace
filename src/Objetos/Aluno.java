@@ -6,9 +6,11 @@ public class Aluno {
 
     //CONSTRUTOR
     public Aluno() {
+
         this.nomeAluno = nomeAluno;
         this.rgm = rgm;
         this.disciplinas = disciplinas;
+
     }
 
     //ATRIBUTOS
