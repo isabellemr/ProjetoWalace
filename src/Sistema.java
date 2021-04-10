@@ -11,6 +11,7 @@ public class Sistema {
         ArrayList<Aluno> turma = new ArrayList<>(60);
         Scanner input = new Scanner(System.in);
         Scanner entradaString = new Scanner(System.in);
+        BuscaBinaria buscaBinaria = new BuscaBinaria();
 
         //ATRIBUTOS
         int menu = 99;
@@ -74,9 +75,25 @@ public class Sistema {
 
                     }
 
+                break;
+
                 //BUSCA DE USUARIO
                 case 2:
-                    System.out.println("Case 2 \n");
+
+                    System.out.println("Qual aluno deseja pesquisar? \n");
+                    int rgm = input.nextInt();
+                    int nsei = buscaBinaria.binario(turma, rgm);
+                    if(nsei >= 0){
+                        System.out.println("Nome do aluno: " + turma.get(nsei).getNomeAluno());
+                        System.out.println("RGM do aluno: " + turma.get(nsei).getRgm());
+                        System.out.println("Disciplinas: ");
+                        for (String disciplina: turma.get(nsei).getDisciplinas()){
+                            System.out.print(disciplina);
+                        }
+                    }else{
+                        System.out.println("Não existe.");
+                    }
+
                     break;
 
                 //DELETAR UM USUARIO
@@ -87,7 +104,7 @@ public class Sistema {
                 //VISUALIZAR TURMA
                 case 4:
                     for(int cont = 0; cont < turma.size(); cont++){
-                        System.out.println(turma.get(cont).getNomeAluno());
+                        System.out.println("Nome: " + turma.get(cont).getNomeAluno() + "\t" + "RGM: " + turma.get(cont).getRgm() + "\t" + "Disciplinas: " + turma.get(cont).getDisciplinas() + "\n");
                     }
                     break;
 
