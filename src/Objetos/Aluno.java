@@ -2,7 +2,7 @@ package Objetos;
 
 import java.util.ArrayList;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
 
     //CONSTRUTOR
     public Aluno() {
@@ -43,4 +43,8 @@ public class Aluno {
         this.disciplinas = disciplinas;
     }
 
+    @Override
+    public int compareTo(Aluno oAluno) {
+        return (this.rgm - oAluno.getRgm());
+    }
 }

@@ -1,6 +1,7 @@
 import Objetos.Aluno;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Sistema {
@@ -64,8 +65,9 @@ public class Sistema {
 
                         }
 
-                        //Adicionando luno a turma
+                        //Adicionando luno a turma e ordenando a turma por RGM, do menor para o maior
                         turma.add(aluno);
+                        Collections.sort(turma);
 
                         //CONTINUAR CADASTRO DE MAIS ALUNOS OU NAO
                         System.out.println("Deseja cadastrar outro aluno? (Digite 's' para sim ou 'n' para não)");
@@ -104,8 +106,10 @@ public class Sistema {
                 //VISUALIZAR TURMA
                 case 4:
                     for(int cont = 0; cont < turma.size(); cont++){
-                        System.out.println("Nome: " + turma.get(cont).getNomeAluno() + "\t" + "RGM: " + turma.get(cont).getRgm() + "\t" + "Disciplinas: " + turma.get(cont).getDisciplinas() + "\n");
+                        System.out.println("Nome: " + turma.get(cont).getNomeAluno() + "\t" + "RGM: " + turma.get(cont).getRgm() + "\t" + "Disciplinas: " + turma.get(cont).getDisciplinas());
                     }
+
+                    System.out.println("\n");
                     break;
 
             }
