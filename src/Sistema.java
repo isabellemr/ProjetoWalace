@@ -91,14 +91,25 @@ public class Sistema {
                         System.out.println("Disciplinas: " + turma.get(posicaoBuscada).getDisciplinas());
                         System.out.println("\n");
                     }else{
-                        System.out.println("Não existe.");
+                        System.out.println("Não existe");
                     }
 
                     break;
 
                 //DELETAR UM USUARIO
                 case 3:
-                    System.out.println("Case 3 \n");
+
+                    System.out.println("Qual aluno deseja deletar, favor digitar o RGM \n");
+                    int rg = input.nextInt();
+                    int posicaoBuscadaDeletar = buscaBinaria.binario(turma, rg);
+                    if(posicaoBuscadaDeletar >= 0){
+                        turma.remove(posicaoBuscadaDeletar);
+                        System.out.println("O(A) aluno(a) " + turma.get(posicaoBuscadaDeletar).getNomeAluno() + " foi excluído com sucesso");
+                        System.out.println("\n");
+                    } else {
+                        System.out.println("Não existe");
+                    }
+
                     break;
 
                 //VISUALIZAR TURMA
