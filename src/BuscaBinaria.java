@@ -8,8 +8,9 @@ public class BuscaBinaria {
     {
         int meio;
         int inicio, fim;
+
         inicio = turma.get(0).getRgm();
-        fim = turma.get(59).getRgm();
+        fim = turma.get(turma.size() - 1).getRgm();
 
         while (inicio <= fim)
         {
