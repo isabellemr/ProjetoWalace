@@ -4,21 +4,14 @@ import java.util.ArrayList;
 
 public class Aluno implements Comparable<Aluno>{
 
-    //CONSTRUTOR
-    public Aluno() {
-
-        this.nomeAluno = nomeAluno;
-        this.rgm = rgm;
-        this.disciplinas = disciplinas;
-
-    }
-
     //ATRIBUTOS
     public String nomeAluno;
     public int rgm;
-    public ArrayList<String> disciplinas = new ArrayList();
+    public ArrayList<Disciplina> disciplinas = new ArrayList();
 
     //GETTERS E SETTERS
+
+
     public String getNomeAluno() {
         return nomeAluno;
     }
@@ -35,11 +28,17 @@ public class Aluno implements Comparable<Aluno>{
         this.rgm = rgm;
     }
 
-    public ArrayList<String> getDisciplinas() {
-        return disciplinas;
+    public void getDisciplinas() {
+        for(int i = 0; i < disciplinas.size(); i++) {
+            System.out.print("Disciplina: " + disciplinas.get(i).nomeDisciplina + "\t Nota: " + disciplinas.get(i).notaDisciplina + "\t");
+        }
     }
 
-    public void setDisciplinas(ArrayList<String> disciplinas) {
+    public void mostrarUmaDisciplina(int posicao) {
+        System.out.println("Disciplina: " + disciplinas.get(posicao).nomeDisciplina + "\t Nota: " + disciplinas.get(posicao).notaDisciplina);
+    }
+
+    public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinas = disciplinas;
     }
 
